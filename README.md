@@ -1,4 +1,4 @@
-﻿# Platform IaC + CI/CD Portfolio
+# Platform IaC + CI/CD Portfolio
 
 A portfolio project showcasing Infrastructure as Code, CI/CD operations, Python automation, SQL troubleshooting, and Databricks platform administration patterns.
 
