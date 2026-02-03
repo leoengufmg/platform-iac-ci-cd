@@ -1,0 +1,23 @@
+﻿name: IaC CI
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+
+jobs:
+  terraform:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: terraform
+    steps:
+      - uses: actions/checkout@v4
+      - uses: hashicorp/setup-terraform@v3
+      - name: Format
+        run: terraform fmt -check -recursive
+      - name: Validate (dev)
+        run: |
+          cd environments/dev
+          terraform init -backend=false
+          terraform validate

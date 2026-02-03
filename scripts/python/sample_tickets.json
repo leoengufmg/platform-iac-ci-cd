@@ -1,0 +1,5 @@
+﻿[
+  {"id": "TCK-101", "type": "access", "summary": "Add analyst role"},
+  {"id": "TCK-102", "type": "pipeline", "summary": "CI failed on prod"},
+  {"id": "TCK-103", "type": "access", "summary": "Remove contractor"}
+]
