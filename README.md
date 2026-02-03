@@ -1,4 +1,8 @@
-# Platform IaC + CI/CD Portfolio
+﻿# Platform IaC + CI/CD Portfolio
+
+![CI](https://github.com/leoengufmg/platform-iac-ci-cd/actions/workflows/ci.yml/badge.svg)
+![Terraform](https://img.shields.io/badge/Terraform-1.5+-blueviolet)
+![Python](https://img.shields.io/badge/Python-3.10+-blue)
 
 A portfolio project showcasing Infrastructure as Code, CI/CD operations, Python automation, SQL troubleshooting, and Databricks platform administration patterns.
 
@@ -30,6 +34,19 @@ terraform plan
 terraform fmt -check -recursive
 terraform validate
 ```
+
+### Terraform Pipeline (local)
+```bash
+cd terraform/environments/dev
+terraform init -backend=false
+terraform validate
+terraform plan
+```
+
+### Drift Detection (extend)
+1. Add a scheduled GitHub Actions workflow (e.g., nightly).
+2. Run `terraform plan -detailed-exitcode` against `prod` with remote state.
+3. Publish the plan output as an artifact and alert on exit code `2`.
 
 ### Python tools
 ```bash
